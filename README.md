@@ -1,6 +1,6 @@
-# 📊 Predicción de Aprobación de Curso de Matemáticas mediante Redes Neuronales
+#  Predicción de Aprobación de Curso de Matemáticas mediante Redes Neuronales
 
-## 👥 Equipo de Trabajo
+## Equipo de Trabajo
 - **Juan Esteban Ortiz** - 2410227-3743
 - **Juan David Olaya** - 202410206-3743
 - **Pablo Esteban Becerra** - 202243506-3743
@@ -9,18 +9,18 @@
 
 ---
 
-## 📖 Descripción del Proyecto
+##  Descripción del Proyecto
 
 Este proyecto implementa modelos de **redes neuronales multicapa (MLP)** para predecir si un estudiante aprobará un curso de matemáticas basándose en sus características demográficas, familiares y hábitos de estudio.
 
-### 🎯 Objetivo
+### Objetivo
 Desarrollar y comparar diferentes arquitecturas de redes neuronales para clasificar estudiantes en dos categorías:
 - **Aprueba** (approved = 1)
 - **No aprueba** (approved = 0)
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 ActividadML/
@@ -34,7 +34,7 @@ ActividadML/
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 **Archivo:** `student_performance.csv`
 
@@ -65,7 +65,7 @@ ActividadML/
 
 ---
 
-## 🛠️ Tecnologías y Librerías
+## Tecnologías y Librerías
 
 ```python
 - Python 3.x
@@ -77,7 +77,7 @@ ActividadML/
 
 ---
 
-## 🔄 Pipeline de Preprocesamiento
+## Pipeline de Preprocesamiento
 
 ### 1. **Pipeline para Atributos Numéricos**
 ```python
@@ -109,9 +109,9 @@ full_pipeline = ColumnTransformer([
 
 ---
 
-# 📘 ACTIVIDAD 1: Redes Neuronales (notebook1.ipynb)
+# ACTIVIDAD 1: Redes Neuronales (notebook1.ipynb)
 
-## 🧠 Modelos Implementados
+## Modelos Implementados
 
 Se entrenaron **5 modelos de redes neuronales** con diferentes configuraciones:
 
@@ -130,7 +130,7 @@ Se entrenaron **5 modelos de redes neuronales** con diferentes configuraciones:
 
 ---
 
-## 📈 Resultados
+## Resultados
 
 ### Primera Ejecución (sin learning_rate):
 - **Mejor modelo:** Modelo 2
@@ -140,29 +140,29 @@ Se entrenaron **5 modelos de redes neuronales** con diferentes configuraciones:
 ### Optimización con learning_rate:
 | Configuración | Accuracy | Observación |
 |--------------|----------|-------------|
-| `learning_rate='constant'` | **0.8278** | ✅ Mejor resultado |
-| `learning_rate='adaptive'` | 0.8086 | ⚠️ Disminución |
-| `learning_rate='invscaling'` | 0.7273 | ❌ Peor resultado |
+| `learning_rate='constant'` | **0.8278** |  Mejor resultado |
+| `learning_rate='adaptive'` | 0.8086 | Disminución |
+| `learning_rate='invscaling'` | 0.7273 | Peor resultado |
 
-### 🏆 Conclusión Actividad 1:
+### Conclusión Actividad 1:
 El **Modelo 2 con learning_rate='constant'** logró el mejor desempeño con **82.78% de accuracy**.
 
 ---
 
-# 🌳 ACTIVIDAD 2: Árboles de Decisión (notebook2.ipynb)
+# ACTIVIDAD 2: Árboles de Decisión (notebook2.ipynb)
 
-## 📋 Descripción
+## Descripción
 
 Esta actividad aplica **árboles de decisión** al mismo dataset de estudiantes, comparando diferentes configuraciones de hiperparámetros para optimizar el rendimiento del clasificador.
 
-## 🎯 Objetivo
+## Objetivo
 
 Determinar los hiperparámetros óptimos para un árbol de decisión que prediga la aprobación del curso de matemáticas, experimentando con:
 - Diferentes profundidades del árbol (`max_depth`)
 - Criterios de impureza (`gini` vs `entropy`)
 - Número mínimo de muestras para dividir (`min_samples_split`)
 
-## 🌲 Modelos de Árboles de Decisión
+## Modelos de Árboles de Decisión
 
 ### Experimento 1: Variación de max_depth con criterio Gini
 
@@ -184,7 +184,7 @@ Determinar los hiperparámetros óptimos para un árbol de decisión que prediga
 | Modelo 4 | 8 | entropy | ~0.80 |
 | Modelo 5 | 10 | entropy | ~0.78 |
 
-### 🔍 Observación Importante:
+### Observación Importante:
 Ambos criterios (`gini` y `entropy`) producen **resultados idénticos** con `max_depth=4`, logrando **83.73% de accuracy**. Esto indica que ambos métodos encuentran las mismas divisiones óptimas en el árbol.
 
 ### Experimento 3: Variación de min_samples_split
@@ -199,7 +199,7 @@ Con los mejores hiperparámetros (`max_depth=4`, `criterion='gini'`):
 
 **Conclusión:** El parámetro `min_samples_split` **no afecta** el accuracy cuando `max_depth=4`, ya que la profundidad máxima limita el crecimiento del árbol antes de que este parámetro entre en acción.
 
-## 🏆 Configuración Óptima del Árbol
+## Configuración Óptima del Árbol
 
 ```python
 DecisionTreeClassifier(
@@ -218,7 +218,7 @@ DecisionTreeClassifier(
 | **Redes Neuronales** | 82.78% | MLPClassifier: (5,6,7), SGD, identity, lr=constant |
 | **Árboles de Decisión** | **83.73%** ✅ | DecisionTreeClassifier: max_depth=4, gini |
 
-### 💡 Conclusiones Comparativas:
+###  Conclusiones Comparativas:
 
 1. **Los árboles de decisión superan ligeramente** a las redes neuronales (+0.95%)
 
@@ -232,7 +232,7 @@ DecisionTreeClassifier(
 
 ---
 
-## 🚀 Cómo Ejecutar el Proyecto
+## Cómo Ejecutar el Proyecto
 
 ### 1. **Clonar el repositorio**
 ```bash
@@ -255,72 +255,10 @@ En Jupyter: `Cell > Run All`
 
 ---
 
-## 📊 Visualizaciones
 
-El proyecto incluye gráficos de barras comparando el **accuracy** de los 5 modelos:
-
-```python
-plt.figure(figsize=(10, 6))
-plt.bar(modelos, accuracies)
-plt.ylabel('Accuracy')
-plt.title('Comparación de Modelos')
-plt.ylim([0.6, 0.8])
-plt.show()
-```
-
----
-
-## 🔍 Análisis y Conclusiones Generales
-
-### Hallazgos Principales:
-
-#### 🧠 Redes Neuronales (Actividad 1):
-1. **Efectividad comprobada** para clasificación, alcanzando 82.78% de accuracy
-2. **Arquitecturas intermedias** (5,6,7) superan a las muy simples o muy complejas
-3. **Learning rate es crítico:** `constant` mejora rendimiento, `invscaling` lo deteriora
-4. **SGD puede superar a Adam** con configuración adecuada
-5. **Función identity** fue sorpresivamente efectiva en este dataset
-
-#### 🌳 Árboles de Decisión (Actividad 2):
-1. **Mejor rendimiento global:** 83.73% de accuracy
-2. **Profundidad óptima:** max_depth=4 evita overfitting
-3. **Equivalencia gini/entropy:** Ambos criterios producen resultados idénticos
-4. **Simplicidad y eficiencia:** Menos hiperparámetros que ajustar
-5. **Interpretabilidad superior:** Se pueden visualizar las reglas de decisión
-
-### 🎯 Conclusión Final:
-
-Para este problema específico de predicción de aprobación:
-- ✅ **Árboles de Decisión** son la mejor opción (mayor accuracy, más simples, interpretables)
-- ✅ **Redes Neuronales** son competitivas pero requieren mayor esfuerzo de configuración
-- ✅ Ambas técnicas superan el **80% de accuracy**, demostrando que el problema es predecible
-
-### Recomendaciones para Trabajo Futuro:
-
-- Implementar **Grid Search** para exploración automática de hiperparámetros
-- Agregar **validación cruzada** (k-fold) para resultados más robustos
-- Incluir métricas adicionales: **precision, recall, F1-score, ROC-AUC**
-- Analizar **matriz de confusión** para entender tipos de errores
-- Probar **Random Forest** y **Gradient Boosting** para mejorar árboles
-- Implementar **ensemble methods** combinando múltiples modelos
-- Fijar **random_state** en todos los modelos para reproducibilidad
-- Realizar **análisis de importancia de características**
-
----
-
-## 📚 Referencias
+##  Referencias
 
 - [Documentación scikit-learn - MLPClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html)
 - [Student Performance Dataset](https://archive.ics.uci.edu/ml/datasets/student+performance)
 
----
 
-## 📄 Licencia
-
-Este proyecto fue desarrollado con fines académicos para el curso de Machine Learning.
-
----
-
-## 📧 Contacto
-
-Para consultas sobre este proyecto, contactar a cualquier miembro del equipo listado al inicio de este documento.
